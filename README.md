@@ -66,6 +66,28 @@ npm run pm2:logs
 
 访问 `http://localhost:3000` 进入管理界面。
 
+### Docker 部署（免本地编译）
+
+```bash
+# 构建镜像
+docker build -t goofishcbot:latest .
+
+# 运行容器（建议挂载数据与日志目录）
+docker run -d \
+  --name goofishcbot \
+  -p 3000:3000 \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/logs:/app/logs \
+  --restart unless-stopped \
+  goofishcbot:latest
+```
+
+停止与删除容器：
+
+```bash
+docker stop goofishcbot && docker rm goofishcbot
+```
+
 ## 📖 文档
 
 详细文档请访问：[https://haiyewei.github.io/GoofishCredentialsBot](https://haiyewei.github.io/GoofishCredentialsBot)
