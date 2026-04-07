@@ -1,0 +1,14 @@
+.git
+.github
+node_modules
+frontend/node_modules
+dist
+public
+frontend/dist
+docs/.vitepress/cache
+docs/.vitepress/dist
+data
+logs
+npm-debug.log*
+yarn-error.log*
+.DS_Store
